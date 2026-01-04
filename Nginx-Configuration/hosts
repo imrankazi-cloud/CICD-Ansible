@@ -4,5 +4,5 @@ server1 ansible_host=172.31.87.255
 server2 ansible_host=172.31.30.210
 
 [all:vars]
-ansible_python_interpreter=/use/bin/python3
+ansible_python_interpreter=/usr/bin/python3
 ansible_user=ubuntu
