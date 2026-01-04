@@ -34,7 +34,7 @@ pipeline {
                                       keyFileVariable: 'ANSIBLE_KEY',
                                       usernameVariable: 'ANSIBLE_USER')
                 ]) {
-                    sh """
+                    sh '''
                         set -e
                         ansible-playbook --check \
                           -i /etc/ansible/hosts \
@@ -42,7 +42,7 @@ pipeline {
                           --private-key \"$ANSIBLE_KEY\" \
                           --host-key-checking=no \ 
                           ${params['Playbook Name']}.yml
-                    """
+                    '''
                 }
             } else if (params['Playbook Action'] == 'Playbook-deploy') {
                 ansiblePlaybook(
