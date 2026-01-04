@@ -3,7 +3,7 @@
   hosts: all  # or your target group from /etc/ansible/hosts
   become: yes
   roles:
-    - Ansible-MongoRole/mongodb           # ✅ Full path notation
-    - Ansible-MongoRole/mongodb_users     # ✅ Full path  
+    - Ansible-Mongo-Role/mongodb           # ✅ Full path notation
+    - Ansible-Mongo-Role/mongodb_users     # ✅ Full path  
     - Nginx-Configuration/nginx           # ✅ Full path
     - Nginx-Configuration/nginx_static_website
