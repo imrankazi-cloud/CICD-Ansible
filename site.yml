@@ -1,0 +1,7 @@
+---
+- name: Deploy MongoDB and Nginx
+  hosts: all  # or your target group from /etc/ansible/hosts
+  become: yes
+  roles:
+    - mongodb
+    - nginx
