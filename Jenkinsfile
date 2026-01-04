@@ -34,16 +34,9 @@ pipeline {
                                       keyFileVariable: 'ANSIBLE_KEY',
                                       usernameVariable: 'ANSIBLE_USER')
                 ]) {
-                    sh '''
-                        set -e
-                        ansible-playbook --check \
-                          -i /etc/ansible/hosts \
-                          --user \"$ANSIBLE_USER\" \
-                          --private-key \"$ANSIBLE_KEY\" \
-                          --host-key-checking=no \ 
-                          ${params['Playbook Name']}.yml
-                    '''
-                }
+                    sh 'ansible-playbook --check -i /etc/ansible/hosts --user "$ANSIBLE_USER" --private-key "$ANSIBLE_KEY" --host-key-checking=no ${params['Playbook Name']}.yml'
+                    }
+                                          
             } else if (params['Playbook Action'] == 'Playbook-deploy') {
                 ansiblePlaybook(
                     credentialsId: 'ansible-connect',
