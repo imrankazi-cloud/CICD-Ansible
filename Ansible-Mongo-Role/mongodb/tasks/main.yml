@@ -40,9 +40,10 @@
     - python3-pip
   become: true
 
-- name: Installing Pymongo to interact with mongo easily
-  pip:
-    name: pymongo
+- name: Install python3-pymongo (system package)
+  apt:
+    name: python3-pymongo
+    state: present
 
 - name: Checking whether MongoDB APT key exists or not
   stat: 
