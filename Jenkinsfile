@@ -40,6 +40,7 @@ pipeline {
                           -i /etc/ansible/hosts \
                           --user \"$ANSIBLE_USER\" \
                           --private-key \"$ANSIBLE_KEY\" \
+                          --host-key-checking=no \ 
                           ${params['Playbook Name']}.yml
                     """
                 }
